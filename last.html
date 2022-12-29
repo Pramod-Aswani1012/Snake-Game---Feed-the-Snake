@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed the Snake</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: url('./Photos_and_Sounds/Snake\ Game\ -\ Background.png');
+            min-height: 100vh;
+            background-repeat: no-repeat;
+            background-size: 100vw 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* opacity: 0.5; */
+        }
+
+        :root {
+    --grey: black;
+}
+
+    #container::before
+    {
+        background: url('./Photos_and_Sounds/—Pngtree—horror\ snake_3016021.png');
+            content: "";
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.2;
+
+    }
+
+        #board {
+            height: 90vmin;
+            width: 90vmin;
+            background-image: linear-gradient(lightgreen, lightyellow);
+            display: grid;
+            grid-template-columns: repeat(18, 1fr);
+            grid-template-rows: repeat(18, 1fr);
+            /* opacity: 0.5; */
+        }
+
+        .food {
+            background-color: purple;
+            border: .25vmin solid red;
+            border-radius: 8px;
+        }
+
+        .snake {
+            background-color: greenyellow;
+
+            border-radius: 12px;
+        }
+
+        .head{
+             background-color: green;
+             border: .25vmin solid black;
+             border-radius: 12px;
+            /* content:"";
+            background: url('./Photos_and_Sounds/—Pngtree—horror\ snake_3016021.png');
+            height: 150px;
+            width: 150px;
+            position: relative;
+            /* opacity: 1.5; */
+            /* z-index: -1; */ 
+        }
+        .beforecontent {
+    position: absolute;
+    font-size: 2rem;
+    top: 64vh;
+    left: 42vw;
+    color: white;
+    font-weight: 200;
+}
+
+    
+#btn {
+    position: absolute;
+    top: 42vh;
+    left: 42vw;
+    height: 16vh;
+    width: 17vw;
+    background-color: lawngreen;
+    border-radius: 10%;
+    font-size: 1.5rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+#btn:hover {
+    transform: scale(1.2);
+}
+
+
+#btn2 {
+    display: block;
+    position: absolute;
+    top: 42vh;
+    left: 42vw;
+    height: 16vh;
+    width: 17vw;
+    background-color: yellow;
+    border-radius: 10%;
+    font-size: 1.5rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+#btn2:hover {
+    transform: scale(1.2);
+}
+
+    #score1
+    {
+        position: absolute;
+    top: 22px;
+    right: 97px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    }
+    .incrementscore
+    {
+        position: absolute;
+    top: 28px;
+    right: 27px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;   
+    }
+
+    #hiscorebox1
+    {
+        position: absolute;
+    top: 65px;
+    right: 36px;
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+    }
+    #popup
+    {
+        display: none;
+        /* display: flex; */
+        /* flex-direction: column; */
+        
+    }
+    #popup.active
+    {
+        visibility: visible;
+        opacity: 1;
+        /* transition: 0.5s; */
+    }
+    #container.active
+    {
+        filter: blur(4.5px);
+        pointer-events: none;
+        user-select: none;
+    }
+    .flexkro
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #showscore
+    {
+        position: relative;
+        right: 280px;
+        top: 100px;
+        color: red;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    #showhighestscore
+    {
+        position: relative;
+        right: 280px;
+        top: 130px;
+        color: red;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- <button id="btn" onclick="Startgame()">Start Game</button>
+    <button id="btn2" >Play Again</button>
+    <div class="beforecontent">
+        <p>Press <b>&#8592;</b> to move Snake leftwards</p>
+        <p>Press <b>&#8594;</b> to move Snake Rightwards</p>
+         <p>Press <b>&#8593;</b> to m</p> -->
+        <!-- <p>Press <b>&#8593;</b> and <b>&#8594;</b> to save from Dragon</p> -->
+    <!-- </div> --> 
+    <div id="container">
+        <div id="board">
+            <div class="snake"></div>
+            <audio src="./Photos_and_Sounds/move.mp3" id="Snakemove"></audio>
+            <audio src="./Photos_and_Sounds/Snake game-Game Over12.mp3" id="Collide" ></audio>
+            <audio src="./Photos_and_Sounds/Snake Game - Score12.mp3" id="foodeaten"></audio>
+            <div class="food"></div>
+        </div>
+    </div>
+    <div id="score1">Score : </div>
+    <div id="hiscorebox1">Hi Score : </div>
+    <div id="popup" class="flexkro">
+        <button id="btn2" onClick="window.location.reload()">Play Again</button>
+        <div id="showscore"></div>
+        <div id="showhighestscore"></div>
+    </div>
+    
+    <!-- <div class="incrementscore">0</div> -->
+</body>
+<script src="./JS/javafile.js"></script>
+
+</html>

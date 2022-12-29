@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed the Snake</title>
+    <style>
+
+*
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --grey: grey;
+}
+
+
+
+body::before {
+    content: "";
+    background-color: var(--grey);
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    opacity: 0.8;
+
+    position: absolute;
+}
+
+body {
+    background: url("./Photos_and_Sounds/—Pngtree—horror\ snake_3016021.png");
+    background-size: cover;
+    overflow: hidden;
+}
+
+.beforecontent {
+    position: absolute;
+    font-size: 2rem;
+    top: 64vh;
+    left: 42vw;
+    font-weight: 200;
+}
+
+
+#btn2 {
+    display: block;
+    position: absolute;
+    top: 42vh;
+    left: 42vw;
+    height: 16vh;
+    width: 17vw;
+    background-color: lightblue;
+    border-radius: 10%;
+    font-size: 1.5rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+#btn2:hover {
+    transform: scale(1.2);
+}
+
+    </style>
+</head>
+<body>
+    <!-- <button id="btn" onclick="Startgame()">Start Game</button> -->
+    <a href="./last.html"><button id="btn2" >Start Game</button></a>
+    <div class="beforecontent">
+        <p>Press <b>&#8592;</b> to move Snake leftwards</p>
+        <p>Press <b>&#8594;</b> to move Snake Rightwards</p>
+        <p>Press <b>&#8593;</b> to move Snake Upwards</p>
+        <p>Press <b>&#8595;</b> to move Snake Downwards</p>
+</body>
+</html>
